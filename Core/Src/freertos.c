@@ -293,7 +293,7 @@ void modbus_task(void *argument)
 
   if(IP_NOT_SET || MASK_NOT_SET || GW_NOT_SET)
   {
-    while(IP_NOT_SET && MASK_NOT_SET && GW_NOT_SET) 
+    while(IP_NOT_SET || MASK_NOT_SET || GW_NOT_SET) 
       w5500_full_reset(); 
   }
   
@@ -308,7 +308,7 @@ void modbus_task(void *argument)
     //if 
     if(IP_NOT_SET || MASK_NOT_SET || GW_NOT_SET)
     {
-      while(IP_NOT_SET && MASK_NOT_SET && GW_NOT_SET)
+      while(IP_NOT_SET || MASK_NOT_SET || GW_NOT_SET)
       {
         w5500_full_reset(); 
         osDelay(100);
