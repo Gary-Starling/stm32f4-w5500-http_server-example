@@ -28,7 +28,7 @@ net_param.ip[1] != net_param_read.ip[1] &&\
   net_param.ip[2] != net_param_read.ip[2] &&\
     net_param.ip[3] != net_param_read.ip[3])
 
-#define MASK_NOT_SET            (net_param.sn[0] != net_param_read.ip[0] &&\
+#define MASK_NOT_SET            (net_param.sn[0] != net_param_read.sn[0] &&\
 net_param.sn[1] != net_param_read.sn[1] &&\
   net_param.sn[2] != net_param_read.sn[1] &&\
     net_param.sn[3] != net_param_read.sn[1])
