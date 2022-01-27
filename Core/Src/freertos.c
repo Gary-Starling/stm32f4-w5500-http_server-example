@@ -14,28 +14,29 @@
 #include "socket.h"
 
 #include <stdio.h>
-#include <string.h>                           S
+#include <string.h>                           
 
 
 
 
 #define DEBUG                      1
-#define DATA_BUF_SIZE		2048            //Размер входного-выходного буф
-#define MAX_SOCK                   8            //Количество рабочих сокетов
+#define DATA_BUF_SIZE		2048            //input buff size
+#define MAX_SOCK                   8        //max sock
 
-#define IP_NOT_SET                 (net_param.ip[0] != net_param_read.ip[0] &&\
-net_param.ip[1] != net_param_read.ip[1] &&\
-  net_param.ip[2] != net_param_read.ip[2] &&\
+
+#define IP_NOT_SET                 (net_param.ip[0] != net_param_read.ip[0] ||\
+net_param.ip[1] != net_param_read.ip[1] ||\
+  net_param.ip[2] != net_param_read.ip[2] ||\
     net_param.ip[3] != net_param_read.ip[3])
 
-#define MASK_NOT_SET            (net_param.sn[0] != net_param_read.sn[0] &&\
-net_param.sn[1] != net_param_read.sn[1] &&\
-  net_param.sn[2] != net_param_read.sn[1] &&\
-    net_param.sn[3] != net_param_read.sn[1])
+#define MASK_NOT_SET            (net_param.sn[0] != net_param_read.sn[0] ||\
+net_param.sn[1] != net_param_read.sn[1] ||\
+  net_param.sn[2] != net_param_read.sn[2] ||\
+    net_param.sn[3] != net_param_read.sn[3])
 
-#define GW_NOT_SET              (net_param.gw[0] != net_param_read.gw[0] &&\
-net_param.gw[1] != net_param_read.gw[1] &&\
-  net_param.gw[2] != net_param_read.gw[2] &&\
+#define GW_NOT_SET              (net_param.gw[0] != net_param_read.gw[0] ||\
+net_param.gw[1] != net_param_read.gw[1] ||\
+  net_param.gw[2] != net_param_read.gw[2] ||\
     net_param.gw[3] != net_param_read.gw[3])
 
 /************************
